@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bokor&display=swap');@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap');@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Six+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:opsz,wght@9..40,300&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+.headline {
+  top: 0;
+  width: 100%;
+  height: 70px; /* Increased height */
+  background-color: transparent; /* Set the background to transparent */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dorsa', sans-serif;
+  font-size: 20px;
+  position: fixed;
+  z-index: 1; /* Set a higher z-index to position it above other content */
+  overflow: hidden; /* Hide the overflow of the border */
+}
+
+
+
+.headline h1 {
+  font-family: 'Bokor', cursive;  font-size: 24px;
+  padding-left: 40px;
+  color: white;
+  font-weight: 40;
+}
+
+
+/* Main Styles */
+.first {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/download.png') no-repeat center center fixed;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Ubuntu', sans-serif;
+  
+}
+
+/* Input Styles */
+.container-input {
+  position: relative;
+}
+
+.input {
+  width: 150px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 9999px;
+  border: solid 1px #333;
+  transition: all .2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  width: 250px;
+}
+
+
+
+/* Left Column Styles */
+.left {
+  font-family: 'Dorsa', sans-serif;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Move content to the bottom */
+  color: rgb(255, 255, 255);
+  position: absolute;
+  left: 0;
+  top: 0; /* Adjusted top position */
+  height: 100%;
+  width: 30%;
+}
+
+
+.left p {
+  margin: -30PX 0; /* Adjusted top and bottom margin for the text */
+  font-family: 'Six Caps', sans-serif;
+  font-size: 150px;
+  bottom: 0;
+  top: 180px;
+}
+
+/* Right Column Styles */
+.right {
+  font-family: 'Dorsa', sans-serif;
+  font-size: 30px;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: rgb(255, 255, 255);
+  position: relative;
+  left: calc(100% - 45%); /* Adjust the percentage as needed */
+  top: 0;
+  height: 100%;
+  width: 45%;
+}
+
+
+.right p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  letter-spacing: 1px;
+  font-size: 35px;
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+  line-height: 50px;
+  position: relative;
+  top: -40px; /* Adjust this value to move it up */
+}
+
+.date{
+  font-size: 200px;
+  font-family: 'Abril Fatface', cursive;  
+  color: white;
+  width: 25vw;
+  position: relative;
+  top: 25px;
+  left: -20px;
+}
+.month {
+  font-size: 40px; /* Increase the font size to make it larger */
+  color: white;
+  width: 6vw;
+  position: relative;
+  top:-100px;
+  left: 260px;
+} 
+
+.input-container {
+  position: relative;
+  width: 200px;
+  margin: 83px auto 50px 400px; /* Added margin-top of 30px */
+}
+
+
+
+.input-container input[type="text"] {
+  font-size: 23px;
+  width: 300%;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  padding: 5px 0;
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+
+}
+
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 300%;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
+  transform: scaleX(1);
+}
+.btn {
+  position: absolute;
+  left: 230px; /* Adjust this value to move the button to the left */
+  top: 20px; /* Adjust this value to control the vertical position */
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 17px;
+  border: none;
+  outline: none;
+}
+
+.btn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn svg rect {
+  stroke-width: 3;
+  stroke-dasharray: 0,0;
+  stroke-dashoffset: 0;
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.btn span {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(to right,  rgb(255, 255, 255) 0%,rgba(225,120,237,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn:hover svg rect {
+  stroke-width: 4;
+  stroke-dasharray: 196, 543;
+  stroke-dashoffset: 437;
+}
+.btn-23,
+.btn-23 *,
+.btn-23 :after,
+.btn-23 :before,
+.btn-23:after,
+.btn-23:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-23 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+
+  /* Adjust the positioning properties as needed */
+  position: absolute; /* Change to 'relative' or 'fixed' if necessary */
+  top: 50%; /* Adjust the vertical position */
+  left: 400px; /* Adjust the horizontal position */
+  transform: translate(-50%, -50%); /* Center the button */
+}
+
+
+.btn-23:disabled {
+  cursor: default;
+}
+
+.btn-23:-moz-focusring {
+  outline: auto;
+}
+
+.btn-23 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-23 [hidden] {
+  display: none;
+}
+
+.btn-23 {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
+}
+
+.btn-23 span {
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: absolute;
+  transition: opacity 0.2s ease;
+}
+
+.btn-23 .marquee {
+  --spacing: 5em;
+  --start: 0em;
+  --end: 5em;
+  -webkit-animation: marquee 1s linear infinite;
+  animation: marquee 1s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  opacity: 0;
+  position: relative;
+  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
+    #fff calc(var(--spacing) * -2) 0;
+}
+
+.btn-23:hover .marquee {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  opacity: 1;
+}
+
+.btn-23:hover .text {
+  opacity: 0;
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
+
+
+/* Your existing CSS */
+
+/* Modify the CSS for the .second div to be right below the .first div */
+.second {
+  background: url('images/stormy-skies-3.png') no-repeat center center fixed;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  position: absolute; /* Position it absolutely */
+  top: 100%; /* Position it below the .right div */
+  width: 100%; /* Set the width to 100% */
+  background-size: 100% 100%;
+  font-family: 'Kanit', sans-serif;
+
+
+}
+.card {
+  position: relative;
+  height: 400px;
+  width: 300px;
+  aspect-ratio: 16/9;
+  background: url('images/cloudy.jpg') no-repeat center center ;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 2px ;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  right:350px;
+  top: 40px;
+}
+
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 10px 0 10px;
+  font-size: 12px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.card__button {
+  padding: 15px;
+  border-radius: 8px;
+  background: #777;
+  border: none;
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  color: #777;
+  border: 1px solid #777;
+}
+
+.temp{
+  font-size:90px;
+  position: absolute;
+  top: 170px; /* Adjust the top position as needed */
+  left: 515px; /* Adjust the left position as needed */
+}
+.city{
+  font-size:30px;
+  position: absolute;
+  top: 320px; /* Adjust the top position as needed */
+  left: 510px; /* Adjust the left position as needed */
+
+}
+
+.Feels-Like-Temperature {
+  margin: 10px;
+  position: absolute;
+  top: 110px; /* Adjust the top position as needed */
+  left: 730px; /* Adjust the left position as needed */
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center; /* Vertically center-align the content */
+}
+
+.Feels-Like-Temperature img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+.Feels-Like-Temperature p {
+  margin: 0; /* Remove any default margin for the <p> element */
+  padding-left: 15px;
+  font-size: 23px; /* Adjust the font size as needed */
+  color: #ffffff; /* Set the text color as needed */
+}
+.Minimum-Temperature {
+  margin: 10px;
+  position: absolute;
+  top: 180px; /* Adjust the top position as needed */
+  left: 725px; /* Adjust the left position as needed */
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center; /* Vertically center-align the content */
+}
+
+.Minimum-Temperature img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+.Minimum-Temperature p {
+  margin: 0; /* Remove any default margin for the <p> element */
+  padding-left: 15px;
+  font-size: 23px; /* Adjust the font size as needed */
+  color: #ffffff; /* Set the text color as needed */
+}
+.Max-Temperature {
+  margin: 10px;
+  position: absolute;
+  top: 255px; /* Adjust the top position as needed */
+  left: 725px; /* Adjust the left position as needed */
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center; /* Vertically center-align the content */
+}
+
+.Max-Temperature img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+.Max-Temperature p {
+  margin: 0; /* Remove any default margin for the <p> element */
+  padding-left: 15px;
+  font-size: 23px; /* Adjust the font size as needed */
+  color: #ffffff; /* Set the text color as needed */
+}
+.Humidityy {
+  margin: 10px;
+  position: absolute;
+  top: 330px; /* Adjust the top position as needed */
+  left: 730px; /* Adjust the left position as needed */
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center; /* Vertically center-align the content */
+}
+
+.Humidityy img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+.Humidityy p {
+  margin: 0; /* Remove any default margin for the <p> element */
+  padding-left: 15px;
+  font-size: 23px; /* Adjust the font size as needed */
+  color: #ffffff; /* Set the text color as needed */
+}
+.windy {
+  margin: 10px;
+  position: absolute;
+  top: 405px; /* Adjust the top position as needed */
+  left: 730px; /* Adjust the left position as needed */
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center; /* Vertically center-align the content */
+}
+
+.windy img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+.windy p {
+  margin: 0; /* Remove any default margin for the <p> element */
+  padding-left: 15px;
+  font-size: 23px; /* Adjust the font size as needed */
+  color: #ffffff; /* Set the text color as needed */
+}
+.pressurey {
+  margin: 10px;
+  position: absolute;
+  top: 480px; /* Adjust the top position as needed */
+  left: 730px; /* Adjust the left position as needed */
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center; /* Vertically center-align the content */
+}
+
+.pressurey img {
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+.pressurey p {
+  margin: 0; /* Remove any default margin for the <p> element */
+  padding-left: 15px;
+  font-size: 23px; /* Adjust the font size as needed */
+  color: #ffffff; /* Set the text color as needed */
+}

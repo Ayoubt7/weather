@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Forcast</title>
+</head>
+<body>
+  
+    <div class="first" id="first">
+      <div class="headline">
+        <button class="btn" onclick="location.href='#second'">
+          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+          <svg>
+            <defs>
+              <linearGradient id="gradiant">
+                <stop stop-color="#fff" offset="0%"></stop>
+                <stop stop-color="white" offset="100%"></stop>
+              </linearGradient>
+            </defs>
+            <rect height="50" width="150" stroke="url(#gradiant)" fill="none"></rect>
+          </svg>
+          <span></span>
+        </button>
+        
+        <div class="input-container">
+          <input type="text" id="input" required="">
+          <label for="input" class="label">Enter City Name Here</label>
+          <div class="underline"></div>
+        </div>
+        
+      </div>
+        <div class="left">
+          <p>ARTISTIC</p>
+          <P>WEATHER</P>
+          </div>
+        </div>
+        <div class="right">
+          <div class="date">
+            <span id="date">07</span>
+            <div class="month">
+              <span id="month">oct</span>
+            </div>
+             <script>
+      // Get the current date
+      function updateDateAndMonth() {
+        const currentDate = new Date();
+        const day = currentDate.getDate().toString().padStart(2, '0');
+        const month = currentDate.toLocaleString('default', { month: 'short' }).toLowerCase();
+        
+        document.getElementById('date').textContent = day;
+        document.getElementById('month').textContent = month;
+      }
+      
+      updateDateAndMonth();
+      
+      setInterval(updateDateAndMonth, 1000);
+    </script>
+          </div>
+            <p>EXPLORE THE WEATHER & ART CONNECTION: DISCOVER HOW WEATHER INFLUENCES ART AND VICE VERSA.</p>
+            <button class="btn-23">
+              <span class="text">EXPLORE</span>
+              <span aria-hidden="" class="marquee">EXPLORE</span>
+            </button>
+          </div>
+          <div class="second" id="second">
+            
+            <div class="card">
+              <div class="card__content">
+                <p class="card__title">Cloudy</p>
+                <p class="card__description">Ivan Fedorovich Choultsé (1877 - 1932), Andante Adriatique</p>
+              </div>
+            </div>
+
+            <div class="tempe">
+              <h1 class="temp">-</h1>
+              <h2 class="city">-</h2>
+            </div>
+            <div class="Weather-Information">
+              <div class="Feels-Like-Temperature">
+                  <img src="images/feels.png">
+                  <p>Feels Like:</p>
+                  <p class="feels_like">-</p>
+              </div>
+              <div class="Minimum-Temperature">
+                  <img src="images/low-temperature.png">
+                  <p>Min Temperature:</p>
+                  <p class="temp_min">-</p>
+              </div>
+              <div class="Max-Temperature">
+                  <img src="images/high-temperature.png">
+                  <p>Max Temperature:</p>
+                  <p class="temp_max">-</p>
+              </div>
+              <div class="Humidityy">
+                  <img src="images/humidity.png">
+                  <p>Humidity:</p>
+                  <p class="Humidity">-</p>
+              </div>
+              <div class="windy">
+                  <img src="images/wind (2).png">
+                  <p>Wind Speed:</p>
+                  <p class="wind">-</p>
+              </div>
+              <div class="pressurey">
+                  <img src="images/Atmospheric Pressure.png">
+                  <p>Pressure:</p>
+                  <p class="pressure">11</p>
+              </div>
+          </div>
+      </div>
+      <script>
+        const apiKey = "0041e690a0343c3e6b4454a2088c525f";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const cityInput = document.getElementById("input");
+      
+        // Select all the elements you want to update
+        const tempElement = document.querySelector(".temp");
+        const feelsLikeElement = document.querySelector(".feels_like");
+        const minTempElement = document.querySelector(".temp_min");
+        const maxTempElement = document.querySelector(".temp_max");
+        const humidityElement = document.querySelector(".Humidity");
+        const windElement = document.querySelector(".wind");
+        const pressureElement = document.querySelector(".pressure");
+        const cardElement = document.querySelector(".card");
+      
+        // Weather condition to background image mapping
+        const weatherImages = {
+          Snow: "url('images/snow.jpg')",
+          Mist: "url('images/mist.jpg')",
+          Drizzle: "url('images/drizzle.jpg')",
+          Rain: "url('images/rain.jpg')",
+          Clear: "url('images/clear-sky.png')",
+          Clouds: "url('images/cloudy.jpg')",
+          // Add more conditions and corresponding image URLs as needed
+        };
+      
+        // Function to fetch weather data
+        async function getWeatherData(cityName) {
+          try {
+            const response = await fetch(`${apiUrl}${cityName}&appid=${apiKey}`);
+            const data = await response.json();
+      
+            // Update the city name element
+            document.querySelector('.city').textContent = data.name;
+      
+            // Update existing elements with numerical values
+            tempElement.textContent = `${Math.round(data.main.temp)}°C`;
+            feelsLikeElement.textContent = `${Math.round(data.main.feels_like)}°C`;
+            minTempElement.textContent = `${Math.round(data.main.temp_min)}°C`;
+            maxTempElement.textContent = `${Math.round(data.main.temp_max)}°C`;
+            humidityElement.textContent = ` ${data.main.humidity}%`;
+            windElement.textContent = ` ${data.wind.speed} km/h`;
+            pressureElement.textContent = ` ${data.main.pressure} hPa`;
+      
+            // Update the background image based on the weather condition
+            const condition = data.weather[0].main;
+            const backgroundImage = weatherImages[condition] || "url('images/default.jpg')"; // Default image
+            cardElement.style.background = backgroundImage;
+          } catch (error) {
+            console.error("Error fetching weather data:", error);
+          }
+        }
+      
+        // Event listener for the button click
+        document.querySelector(".btn").addEventListener("click", () => {
+          const cityName = cityInput.value;
+          getWeatherData(cityName);
+        });
+      </script>
+      
+
+
+</body>
+</html>
